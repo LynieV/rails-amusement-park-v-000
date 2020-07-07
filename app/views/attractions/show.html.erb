@@ -4,7 +4,7 @@
     <strong>Name:</strong>
     <%= @user.name %>
   </h1><br>
-  
+
   <% if @user.admin? %>
 
     <p>
@@ -43,5 +43,5 @@
   <%= link_to "See attractions", attractions_path %><br><br>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> | 
+<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
