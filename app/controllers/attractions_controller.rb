@@ -1,4 +1,5 @@
 class AttractionsController < ApplicationController
+  
   def index
     @attractions = Attraction.all
   end
@@ -29,7 +30,9 @@ class AttractionsController < ApplicationController
   end
 
   private
+  
     def attraction_params
       params.require(:attraction).permit(:name, :min_height, :tickets, :happiness_rating, :nausea_ratiing)
     end
+    
 end
