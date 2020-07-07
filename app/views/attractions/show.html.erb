@@ -1,40 +1,40 @@
 <p id="notice"><%= notice %></p>
 
   <h1>
-    <strong>Name:</strong>
+    Name:
     <%= @user.name %>
   </h1><br>
 
   <% if @user.admin? %>
 
     <p>
-      <strong>ADMIN</strong>
+      ADMIN
     </p><br><br>
 
   <% else %>
 
     <p>
-      <strong>Nausea:</strong>
+      Nausea:
       <%= @user.nausea %>
     </p><br>
 
     <p>
-      <strong>Happiness:</strong>
+      Happiness:
       <%= @user.happiness %>
     </p><br>
 
     <p>
-      <strong>Mood:</strong>
+      Mood:
       <%= @user.mood %>
     </p><br>
 
     <p>
-      <strong>Tickets:</strong>
+      Tickets:
       <%= @user.tickets %>
     </p><br>
 
     <p>
-      <strong>Height:</strong>
+      Height:
       <%= @user.height %>
     </p><br><br>
 
