@@ -1,47 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-  <h1>
-    Name:
-    <%= @user.name %>
-  </h1><br>
+  <h1> Name: <%= @attraction.name %></h1><br>
+  
+  Nausea Rating: <%= @attraction.nausea_rating %><br>
 
-  <% if @user.admin? %>
+  Happiness Rating: <%= @attraction.happiness_rating %><br>
 
-    <p>
-      ADMIN
-    </p><br><br>
+  Tickets: <%= @attraction.tickets %><br>
 
-  <% else %>
+  Minimum Height: <%= @attraction.min_height %><br>
 
-    <p>
-      Nausea:
-      <%= @user.nausea %>
-    </p><br>
+  <%= form_tag('/rides', method: 'post') do %>
+    <%= hidden_field_tag('attraction_id', @attraction.id) %>
+    <%= submit_tag "Go on this ride" %>
+  <% end %><br><br>
 
-    <p>
-      Happiness:
-      <%= @user.happiness %>
-    </p><br>
-
-    <p>
-      Mood:
-      <%= @user.mood %>
-    </p><br>
-
-    <p>
-      Tickets:
-      <%= @user.tickets %>
-    </p><br>
-
-    <p>
-      Height:
-      <%= @user.height %>
-    </p><br><br>
-
-  <% end %>
-
-  <%= link_to "See attractions", attractions_path %><br><br>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit Attraction', edit_attraction_path(@attraction) %> | 
+<%= link_to 'Back', attractions_path %> | 
+<%= link_to 'Destroy', @attraction, method: :delete, data: { confirm: 'Are you sure you want to delete this attraction?' } %>
